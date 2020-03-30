@@ -1,0 +1,43 @@
+:root {
+ --primary: #006700;
+ --white: #ffffff;
+ --lightYellow: #ffffc8
+
+}
+
+.btn {
+    font-family: "Arial", sans-serif;
+    font-weight: 50;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: transform 5.3s ease;
+    width: 1000px;
+    
+    
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.btn--primary--solid {
+    background-color: var(--lightYellow);
+    color: var(--primary);
+    border-width: 10px;
+    border-color: var(--primary)
+}
+
+
+.btn--medium {
+    padding: 80px 50px;
+    font-size: 100px;
+    width: 900;
+    border-radius: 70px;
+}
+
+.btn--small {
+    padding: 40px 30px;
+    font-size: 50px;
+    width: 900;
+    border-radius: 70px;
+}
