@@ -1,0 +1,97 @@
+<!DOCTYPE hmtl>
+
+<? $php
+    $con = mysql_connect('localhost', 'root', '');
+    $db = mysql_select_db('8004_GROUP_PROJECT-313333ad86');   
+?>
+    
+<html>
+<body bgcolor="#D3D3D3">
+<head>  
+<title> Recyclables Search Bar</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-language" content="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	    <meta name="title" content="Search recyclables">
+        <meta name="description" content="Search for recyclables such as plastics, metals, cardboard and glass.">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+</head>   
+	   <div class="header">
+         <div class="inner_header">
+           <div class="logo_container">
+            <div class="header1">
+             <h1>SEARCH <span> RECYCLABLES</span></h1>
+                 <h1> Plastics <span> Cardboard </span> Metals <span> Paper</span> Glass </h1>
+            </div>
+           </div>
+          </div>
+         </div> 
+        
+<div class="MainTitle">  
+    <h1>Why <span> do<span> </span>we</span> recycle?</h1>  
+</div>
+        
+<div class="recyclingtextbox">
+    <p> Recyling conserves resources. When we recycle, materials are converted into new products,
+    reducing the need to consume natural resources which will help to protect natural habitats for the future.</p>
+</div> 
+    
+<div class="recyclablesearchbar">
+    <h1> Please type a recycling product to display the results below </h1>   
+</div>   
+
+    
+<form action="search.php" method="post">
+            <input type="text" id="searchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onMouseDown="active();" onBlur="inactive();"/><input type="submit" id="searchBtn" value="Search Recyclables"/>  
+</form>
+<?php
+    $query = mysql_query("SELECT * FROM USERS");
+    $num_rows = mysql_num_rows($query);
+    
+    echo $num_rows;
+?>
+<!--    
+<div class="imageplastic">
+ <img src="images/img_1.jpeg"></div>
+<hr class="thickgrayline"> 
+-->
+    
+<div class="imagecardboard">
+ <img src="images/Cardboard.jpeg"></div>
+    <hr class="thickgrayline">
+    
+<div class="imagesmetals">         
+ <img src="images/Metals.jpeg"></div> 
+    <hr class="thickgrayline">
+    
+<div class="imagespaper">
+ <img src="images/Paper.jpeg"></div>
+    <hr class="thickgrayline">
+    
+<!--     
+<div class="imagesglass">    
+ <img src="images/Glass.jpeg"></div>
+    <hr class="thickgrayline">
+--> 
+
+	<script type="text/javascript">
+		function active(){
+            var searchBar = document.getElementById('searchBar');
+            
+            if(searchBar.value == 'Search...'){
+                searchBar.value = ''
+                searchBar.placeholder = 'Search...'
+               }
+        }
+        function inactive(){
+            var searchBar = document.getElementById('searchBar');
+            
+            if(searchBar.value == ''){
+                searchBar.value = 'Search...'
+                searchBar.placeholder = ''
+               }
+        }
+	</script>
+	</body>
+</html>
