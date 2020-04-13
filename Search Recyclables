@@ -1,0 +1,57 @@
+<!DOCTYPE hmtl>
+<html>
+	<head>
+        <!-- One single instruction with the internal p command ensures that any reference to p is reflected throughout the document once rather than having to create individual paragraph tags with their own values 
+        <style type="text/css"> 
+            p{
+                color:#CD5C5C;
+                font-size: 300%;
+                font-family: monospace;
+             }
+            </style> 
+        -->    
+	<title> Recyclables Search Bar</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript">
+		function active(){
+            var searchBar = document.getElementById('searchBar');
+            
+            if(searchBar.value == 'Search...'){
+                searchBar.value = ''
+                searchBar.placeholder = 'Search...'
+               }
+        }
+        function inactive(){
+            var searchBar = document.getElementById('searchBar');
+            
+            if(searchBar.value == ''){
+                searchBar.value = 'Search...'
+                searchBar.placeholder = ''
+               }
+        }
+	</script>
+	</head>
+	<body>
+		<!-- form action is where you want the webpage to link to. So, in this case it is a .php file which contains the functionality + SQL commands --> 
+		<form action="search.php" method="post"> <!-- contains search bar and button. These will tie in with javascript for added functionality. --> 
+			<input type="text" id="searchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="searchBtn" value="Search Recyclables" />
+            
+            <!-- 
+
+            Below is a drop down menu that shows the different types of recyclable items 
+            <p> See Below For The Different Types of Recyclables You Can Search For:</p>
+            <select> 
+            <option>Plastics</option>
+            <option>Metals</option>
+            <option>Paper</option>
+            <option>Cardboard</option>
+            <option>Cardboard</option>
+            <option>Glass</option>
+            </select> 
+
+            -->
+		</form>
+        
+
+	</body>
+</html>
